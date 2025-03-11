@@ -6,25 +6,10 @@ root = true
 charset = utf-8
 end_of_line = lf
 indent_style = tab
+indent_size = 2
 trim_trailing_whitespace = true
 insert_final_newline = true
 
 # Match Markdown files
 [*.md]
 trim_trailing_whitespace = false
-
-# Match JSON files
-[*.json]
-indent_size = 2
-
-# Match JavaScript and TypeScript files
-[*.{js,jsx,ts,tsx}]
-indent_size = 2
-
-# Match HTML and CSS files
-[*.{html,css}]
-indent_size = 2
-
-# Match Java files
-[*.java]
-indent_size = 2
