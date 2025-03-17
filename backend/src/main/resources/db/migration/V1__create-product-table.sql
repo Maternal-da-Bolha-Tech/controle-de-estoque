@@ -7,12 +7,6 @@ CREATE TABLE tb_product
     CONSTRAINT pk_tb_product PRIMARY KEY (product_name)
 );
 
-/*
-Os dados inseridos neste arquivo .sql são apenas para fins de teste.
-Eles têm como objetivo simular um conjunto inicial de informações que podem ser utilizadas
-em um banco de dados para validações, demonstrações ou desenvolvimento de funcionalidades.
-Esses dados não devem ser utilizados em um ambiente de produção.
-*/
 INSERT INTO tb_product (product_name, product_description, product_price, product_amount)
 VALUES ('Laptop', 'High performance laptop', 1500.00, 50),
        ('Smartphone', 'Latest model smartphone', 800.00, 200),
