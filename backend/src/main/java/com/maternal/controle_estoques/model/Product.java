@@ -11,25 +11,6 @@ import jakarta.validation.constraints.PositiveOrZero;
 
 import java.math.BigDecimal;
 
-/**
- * Representa uma entidade de produto no sistema de inventário.
- * Esta classe é mapeada para a tabela de banco de dados {@code tb_product} usando as anotações JPA.
- * Ele contém atributos como o nome, descrição, preço e quantidade de um produto.
- * As restrições de validação são aplicadas para garantir a consistência e a correção dos dados.
- * <p>
- * Os seguintes atributos e suas restrições são definidos:
- * <p>
- * - {@code productName}: não pode ficar em branco. Serve como o identificador exclusivo para o produto.
- * <p>
- * - {@code ProductDescription}: não pode ficar em branco. Representa uma descrição textual do produto.
- * <p>
- * - {@code ProductPrice}: não pode ser nulo e deve ser um valor positivo maior que zero.
- * <p>
- * - {@code ProductAmount}: não pode ser nulo e deve ser um valor maior ou igual a zero.
- * <p>
- * Além disso, a classe substitui os métodos iguais e hashcode para definir a igualdade com
- * base no atributo do nome do produto.
- */
 @Entity(name = "product")
 @Table(name = "tb_product")
 public class Product {
