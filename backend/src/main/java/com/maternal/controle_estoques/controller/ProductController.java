@@ -1,6 +1,7 @@
 package com.maternal.controle_estoques.controller;
 
 import com.maternal.controle_estoques.dto.ProductDTO;
+import com.maternal.controle_estoques.model.Product;
 import com.maternal.controle_estoques.service.IProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

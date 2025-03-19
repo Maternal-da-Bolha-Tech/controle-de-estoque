@@ -1,5 +1,6 @@
 package com.maternal.controle_estoques.model;
 
+import com.maternal.controle_estoques.builder.model.ProductSpecificationBuilder;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -37,11 +38,50 @@ public class Product {
 	private Product() {
 	}
 
-	public Product(String productName, String productDescription, BigDecimal productPrice, Integer productAmount) {
-		this.productName = productName;
-		this.productDescription = productDescription;
-		this.productPrice = productPrice;
-		this.productAmount = productAmount;
+	public static class ProductBuilder implements ProductSpecificationBuilder {
+		private Product entity;
+
+		private ProductBuilder() {
+			this.entity = new Product();
+		}
+
+		public static ProductBuilder builder() {
+			return new ProductBuilder();
+		}
+
+		@Override
+		public ProductSpecificationBuilder productName(String name) {
+			this.entity.setProductName(name);
+			return this;
+		}
+
+		@Override
+		public ProductSpecificationBuilder productDescription(String productDescription) {
+			this.entity.setProductDescription(productDescription);
+			return this;
+		}
+
+		@Override
+		public ProductSpecificationBuilder productPrice(BigDecimal productPrice) {
+			this.entity.setProductPrice(productPrice);
+			return this;
+		}
+
+		@Override
+		public ProductSpecificationBuilder productAmount(Integer productAmount) {
+			this.entity.setProductAmount(productAmount);
+			return this;
+		}
+
+		@Override
+		public Product build() {
+			return this.entity;
+		}
+
+		@Override
+		public void reset() {
+			this.entity = new Product();
+		}
 	}
 
 	public String getProductName() {
